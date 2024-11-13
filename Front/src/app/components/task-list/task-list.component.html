@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row ">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripcion</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of tasks">
+                <th scope="row">{{task.id}}</th>
+                <td>{{task.titulo}}</td>
+                <td>{{task.descripcion}}</td>
+                <td>
+                    <button (click)="removeTask(task.id+'')" class="btn btn-danger">Eliminar</button>
+                    <button [routerLink]="['/taskUpdate/',task.id]"  class="btn btn-warning">Modificar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
